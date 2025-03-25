@@ -1,0 +1,77 @@
+@import "scss/libs/normalize.css";
+:root {
+  --dark-color: #222222;
+  --light-color: #ffffff;
+  --polar-color: #f6fbfd;
+  --yellow-color: #d3d21a;
+}
+
+@font-face {
+  font-family: Mandali;
+  src: url(fonts/Mandali-Regular.woff2);
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: Rubik;
+  src: url(fonts/Rubik-Regular.woff2);
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+html {
+  height: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: Mandali, sans-serif;
+  font-weight: 400;
+  color: var(--dark-color);
+  background-color: var(--light-color);
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 386px;
+}
+
+img {
+  max-width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.link-reset {
+  text-decoration: none;
+  color: inherit;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.btn-reset {
+  border: none;
+  padding: 0;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
