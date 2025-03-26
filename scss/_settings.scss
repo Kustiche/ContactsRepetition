@@ -15,8 +15,15 @@ body {
   height: 100%;
   font-family: Mandali, sans-serif;
   font-weight: 400;
-  color: var(--dark-color);
+  color: var(--light-color);
   background-color: var(--light-color);
+}
+
+.site-container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 100%;
 }
 
 .main {

@@ -8,11 +8,39 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main>
-      <section class="contacts">
-        <div class="container"></div>
-      </section>
-    </main>
+    <div class="site-container">
+      <main class="main">
+        <section class="contacts">
+          <div class="contacts__container container">
+            <div class="contacts__wrap">
+              <div class="contacts__content">
+                <div class="contacts__contact">
+                  <div class="contacts__inner">
+                    <div class="contacts__inner-avatar">
+                      <p class="contacts__avatar">В</p>
+                    </div>
+                    <div class="contacts__contact-content">
+                      <p class="contacts__name">Василий Осипов</p>
+                      <p class="contacts__tel">+79135756886</p>
+                    </div>
+                  </div>
+                  <button class="contacts__button-star btn-reset">
+                    <svg class="contacts__star">
+                      <use href="img/sprite.svg#star"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <form class="contacts__form" action="#/" method="post">
+                <input class="contacts__input-name" name="name" type="text" required placeholder="Имя контакта" />
+                <input class="contacts__input-tel" name="tel" type="tel" required placeholder="Номер телефона" />
+                <button class="contacts__button btn-reset">Сохранить</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
     <script type="module" src="js/scripts.js"></script>
   </body>
 </html>
