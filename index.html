@@ -13,28 +13,11 @@
         <section class="contacts">
           <div class="contacts__container container">
             <div class="contacts__wrap">
-              <div class="contacts__content">
-                <div class="contacts__contact">
-                  <div class="contacts__inner">
-                    <div class="contacts__inner-avatar">
-                      <p class="contacts__avatar">В</p>
-                    </div>
-                    <div class="contacts__contact-content">
-                      <p class="contacts__name">Василий Осипов</p>
-                      <p class="contacts__tel">+79135756886</p>
-                    </div>
-                  </div>
-                  <button class="contacts__button-star btn-reset">
-                    <svg class="contacts__star">
-                      <use href="img/sprite.svg#star"></use>
-                    </svg>
-                  </button>
-                </div>
-              </div>
+              <div class="contacts__content"></div>
               <form class="contacts__form" action="#/" method="post">
-                <input class="contacts__input-name" name="name" type="text" required placeholder="Имя контакта" />
-                <input class="contacts__input-tel" name="tel" type="tel" required placeholder="Номер телефона" />
-                <button class="contacts__button btn-reset">Сохранить</button>
+                <input class="contacts__input-name input" name="name" type="text" required placeholder="Имя контакта" />
+                <input class="contacts__input-tel input" name="tel" type="tel" required placeholder="Номер телефона" />
+                <button class="contacts__button button btn-reset">Сохранить</button>
               </form>
             </div>
           </div>
@@ -42,5 +25,41 @@
       </main>
     </div>
     <script type="module" src="js/scripts.js"></script>
+    <template id="contact">
+      <div class="contacts__contact">
+        <div class="contacts__inner">
+          <div class="contacts__inner-avatar">
+            <p class="contacts__avatar"></p>
+          </div>
+          <div class="contacts__contact-content">
+            <p class="contacts__name"></p>
+            <p class="contacts__tel"></p>
+          </div>
+        </div>
+        <button class="contacts__button-star btn-reset">
+          <svg class="contacts__star">
+            <use href="img/sprite.svg#star"></use>
+          </svg>
+        </button>
+      </div>
+    </template>
+    <dialog class="modal" id="contactModal" open="open">
+      <div class="modal__wrap">
+        <button class="modal__close btn-reset" onclick="window.contactModal.close()"></button>
+        <h2 class="modal__title">Изменить контакт</h2>
+        <form class="modal__form" method="post" action="#/">
+          <input class="modal__input-name input" name="name" type="text" required placeholder="Имя контакта" />
+          <input class="modal__input-tel input" name="tel" type="tel" required placeholder="Номер телефона" />
+          <select class="modal__categories" name="category">
+            <option class="modal__category" value="Не задан" selected>Не задан</option>
+            <option class="modal__category" value="Ментор">Ментор</option>
+            <option class="modal__category" value="Друг">Друг</option>
+            <option class="modal__category" value="Знакомый">Знакомый</option>
+            <option class="modal__category" value="С работы">С работы</option>
+          </select>
+          <button class="modal__button button btn-reset">Сохранить</button>
+        </form>
+      </div>
+    </dialog>
   </body>
 </html>

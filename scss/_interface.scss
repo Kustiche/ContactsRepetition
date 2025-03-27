@@ -1,0 +1,38 @@
+.input {
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+  font-family: Rubik, sans-serif;
+  font-size: 14px;
+  border-radius: 15px;
+  color: var(--light-color);
+  background-color: inherit;
+  border: 1px solid rgba(246, 251, 253, 0.28);
+
+  &::placeholder {
+    text-align: center;
+    font-family: Rubik, sans-serif;
+    font-size: 14px;
+  }
+
+  &.error {
+    border: 1px solid var(--red-color);
+  }
+}
+
+.button {
+  padding: 8px 0;
+  width: 100%;
+  font-family: Rubik, sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  background-color: var(--bird-flower-color);
+  border-radius: 15px;
+  color: var(--dark-color);
+  transition: transform 0.4s;
+
+  &:hover {
+    transform: scale(0.95);
+  }
+}

@@ -121,57 +121,70 @@
       opacity: 0.25;
     }
   }
+}
 
-  &__input-name {
-    margin-bottom: 10px;
-    padding: 10px;
-    width: 100%;
-    font-family: Rubik, sans-serif;
-    font-size: 14px;
+.modal {
+  padding: 0;
+  border: none;
+
+  &__wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background-color: var(--dark-color);
     border-radius: 15px;
-    color: var(--light-color);
-    background-color: inherit;
-    border: 1px solid rgba(246, 251, 253, 0.28);
-
-    &::placeholder {
-      text-align: center;
-      font-family: Rubik, sans-serif;
-      font-size: 14px;
-    }
   }
 
-  &__input-tel {
-    margin-bottom: 10px;
-    padding: 10px;
-    width: 100%;
-    font-family: Rubik, sans-serif;
-    font-size: 14px;
-    border-radius: 15px;
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
     color: var(--light-color);
-    background-color: inherit;
-    border: 1px solid rgba(246, 251, 253, 0.28);
-
-    &::placeholder {
-      text-align: center;
-      font-family: Rubik, sans-serif;
-      font-size: 14px;
-    }
   }
 
-  &__button {
-    padding: 8px 0;
-    width: 100%;
-    font-family: Rubik, sans-serif;
-    font-size: 16px;
-    line-height: 150%;
-    text-align: center;
-    background-color: var(--bird-flower-color);
-    border-radius: 15px;
-    color: var(--dark-color);
+  &__close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
     transition: transform 0.4s;
 
-    &:hover {
-      transform: scale(0.95);
+    &::after,
+    &::before {
+      position: absolute;
+      content: "";
+      width: 20px;
+      border-top: 2px solid var(--yellow-color);
+      top: 40%;
+      left: 0;
+      transform: rotate(-50deg);
     }
+
+    &::before {
+      transform: rotate(50deg);
+    }
+
+    &:hover {
+      transform: scale(0.9);
+    }
+  }
+
+  &__form {
+  }
+
+  &__categories {
+    position: relative;
+    width: 400px;
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+    padding: 10px 15px;
+    background-color: #18191c;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: pointer;
   }
 }

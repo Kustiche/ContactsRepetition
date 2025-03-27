@@ -6,6 +6,7 @@
   --yellow-color: #d3d21a;
   --barberry-color: #e7e61a;
   --bird-flower-color: #d3d21a;
+  --red-color: #ff0000;
 }
 
 @font-face {
@@ -83,6 +84,47 @@ img {
   color: inherit;
   background-color: transparent;
   cursor: pointer;
+}
+
+.input {
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+  font-family: Rubik, sans-serif;
+  font-size: 14px;
+  border-radius: 15px;
+  color: var(--light-color);
+  background-color: inherit;
+  border: 1px solid rgba(246, 251, 253, 0.28);
+}
+.input::-moz-placeholder {
+  text-align: center;
+  font-family: Rubik, sans-serif;
+  font-size: 14px;
+}
+.input::placeholder {
+  text-align: center;
+  font-family: Rubik, sans-serif;
+  font-size: 14px;
+}
+.input.error {
+  border: 1px solid var(--red-color);
+}
+
+.button {
+  padding: 8px 0;
+  width: 100%;
+  font-family: Rubik, sans-serif;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  background-color: var(--bird-flower-color);
+  border-radius: 15px;
+  color: var(--dark-color);
+  transition: transform 0.4s;
+}
+.button:hover {
+  transform: scale(0.95);
 }
 
 .contacts {
@@ -191,60 +233,58 @@ img {
   border-top: 1px solid var(--bird-flower-color);
   opacity: 0.25;
 }
-.contacts__input-name {
-  margin-bottom: 10px;
-  padding: 10px;
-  width: 100%;
-  font-family: Rubik, sans-serif;
-  font-size: 14px;
+
+.modal {
+  padding: 0;
+  border: none;
+}
+.modal__wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  background-color: var(--dark-color);
   border-radius: 15px;
+}
+.modal__title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
   color: var(--light-color);
-  background-color: inherit;
-  border: 1px solid rgba(246, 251, 253, 0.28);
 }
-.contacts__input-name::-moz-placeholder {
-  text-align: center;
-  font-family: Rubik, sans-serif;
-  font-size: 14px;
-}
-.contacts__input-name::placeholder {
-  text-align: center;
-  font-family: Rubik, sans-serif;
-  font-size: 14px;
-}
-.contacts__input-tel {
-  margin-bottom: 10px;
-  padding: 10px;
-  width: 100%;
-  font-family: Rubik, sans-serif;
-  font-size: 14px;
-  border-radius: 15px;
-  color: var(--light-color);
-  background-color: inherit;
-  border: 1px solid rgba(246, 251, 253, 0.28);
-}
-.contacts__input-tel::-moz-placeholder {
-  text-align: center;
-  font-family: Rubik, sans-serif;
-  font-size: 14px;
-}
-.contacts__input-tel::placeholder {
-  text-align: center;
-  font-family: Rubik, sans-serif;
-  font-size: 14px;
-}
-.contacts__button {
-  padding: 8px 0;
-  width: 100%;
-  font-family: Rubik, sans-serif;
-  font-size: 16px;
-  line-height: 150%;
-  text-align: center;
-  background-color: var(--bird-flower-color);
-  border-radius: 15px;
-  color: var(--dark-color);
+.modal__close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
   transition: transform 0.4s;
 }
-.contacts__button:hover {
-  transform: scale(0.95);
+.modal__close::after, .modal__close::before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  border-top: 2px solid var(--yellow-color);
+  top: 40%;
+  left: 0;
+  transform: rotate(-50deg);
+}
+.modal__close::before {
+  transform: rotate(50deg);
+}
+.modal__close:hover {
+  transform: scale(0.9);
+}
+.modal__categories {
+  position: relative;
+  width: 400px;
+  border: 1px solid #ffffff;
+  border-radius: 6px;
+  padding: 10px 15px;
+  background-color: #18191c;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
