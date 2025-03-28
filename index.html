@@ -18,6 +18,7 @@
                 <input class="contacts__input-name input" name="name" type="text" required placeholder="Имя контакта" />
                 <input class="contacts__input-tel input" name="tel" type="tel" required placeholder="Номер телефона" />
                 <button class="contacts__button button btn-reset">Сохранить</button>
+                <button class="contacts__button-favorites button btn-reset" type="button">Показать избранное</button>
               </form>
             </div>
           </div>
@@ -43,7 +44,7 @@
         </button>
       </div>
     </template>
-    <dialog class="modal" id="contactModal" open="open">
+    <dialog class="modal" id="contactModal">
       <div class="modal__wrap">
         <button class="modal__close btn-reset" onclick="window.contactModal.close()"></button>
         <h2 class="modal__title">Изменить контакт</h2>
@@ -51,13 +52,14 @@
           <input class="modal__input-name input" name="name" type="text" required placeholder="Имя контакта" />
           <input class="modal__input-tel input" name="tel" type="tel" required placeholder="Номер телефона" />
           <select class="modal__categories" name="category">
-            <option class="modal__category" value="Не задан" selected>Не задан</option>
+            <option class="modal__category" value="Не выбрана" selected>Не выбрана</option>
             <option class="modal__category" value="Ментор">Ментор</option>
             <option class="modal__category" value="Друг">Друг</option>
             <option class="modal__category" value="Знакомый">Знакомый</option>
             <option class="modal__category" value="С работы">С работы</option>
           </select>
           <button class="modal__button button btn-reset">Сохранить</button>
+          <button class="modal__delete button btn-reset" type="button">Удалить</button>
         </form>
       </div>
     </dialog>

@@ -121,6 +121,10 @@
       opacity: 0.25;
     }
   }
+
+  &__button {
+    margin-bottom: 10px;
+  }
 }
 
 .modal {
@@ -133,6 +137,7 @@
     flex-direction: column;
     align-items: center;
     padding: 30px;
+    max-width: 500px;
     background-color: var(--dark-color);
     border-radius: 15px;
   }
@@ -172,19 +177,28 @@
     }
   }
 
-  &__form {
-  }
-
   &__categories {
     position: relative;
-    width: 400px;
-    border: 1px solid #ffffff;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 1px solid rgba(246, 251, 253, 0.28);
     border-radius: 6px;
     padding: 10px 15px;
-    background-color: #18191c;
-    color: #ffffff;
-    font-family: inherit;
-    font-size: inherit;
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    font-family: Rubik, sans-serif;
+    font-size: 14px;
     cursor: pointer;
+  }
+
+  &__category {
+    &:checked {
+      color: var(--dark-color);
+      background-color: var(--yellow-color);
+    }
+  }
+
+  &__button {
+    margin-bottom: 10px;
   }
 }

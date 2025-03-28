@@ -7,4 +7,6 @@ export function addFavorite(e) {
   contacts[contactIndex].isFavorite = contacts[contactIndex].isFavorite ? false : true;
 
   render();
+
+  localStorage.setItem("contacts", JSON.stringify(contacts));
 }

@@ -1,13 +1,10 @@
 import { render } from "./render.js";
 import { contacts } from "./scripts.js";
-import { inputTelephone } from "./view.js";
+import { inputName, inputTelephone } from "./view.js";
 import { sortedContacts } from "./sortedContacts.js";
 
-export function addContact(e) {
-  const name = e.target[0].value;
-  const telephone = e.target[1].value;
-
-  const isNumberTelephone = isNaN(telephone);
+export function addContact(isFavorite) {
+  const isNumberTelephone = isNaN(inputTelephone.value);
 
   if (isNumberTelephone) {
     inputTelephone.classList.add("error");
@@ -17,13 +14,18 @@ export function addContact(e) {
     inputTelephone.classList.remove("error");
 
     contacts.push({
-      name,
-      telephone,
-      category: "Не выбрано",
+      name: inputName.value.trim() === "" ? inputTelephone.value.substring(0, 26) : inputName.value.trim(),
+      telephone: inputTelephone.value.substring(0, 26),
+      category: "Не выбрана",
       isFavorite: false,
     });
 
+    inputName.value = "";
+    inputTelephone.value = "";
+
     sortedContacts();
-    render();
+    render(isFavorite);
+
+    localStorage.setItem("contacts", JSON.stringify(contacts));
   }
 }
