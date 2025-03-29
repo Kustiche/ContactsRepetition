@@ -3,11 +3,7 @@ import { contacts } from "./scripts.js";
 import { modal, modalCategories, modalInputName, modalInputTel } from "./view.js";
 
 export function edititngContact(contactIndex, isFavorite) {
-  contacts[contactIndex].name =
-    modalInputName.value.trim() === "" ? modalInputTel.value.substring(0, 26) : modalInputName.value.trim();
-  contacts[contactIndex].category = modalCategories.value;
-
-  const isNumberTelephone = isNaN(modalInputTel.value);
+  const isNumberTelephone = isNaN(modalInputTel.value) || modalInputTel.value.trim() === "";
 
   if (isNumberTelephone) {
     modalInputTel.classList.add("error");
@@ -16,7 +12,10 @@ export function edititngContact(contactIndex, isFavorite) {
   } else {
     modalInputTel.classList.remove("error");
 
-    contacts[contactIndex].telephone = modalInputTel.value.substring(0, 26);
+    contacts[contactIndex].name =
+      modalInputName.value.trim() === "" ? modalInputTel.value.substring(0, 26) : modalInputName.value.trim();
+    contacts[contactIndex].telephone = modalInputTel.value.substring(0, 26).trim();
+    contacts[contactIndex].category = modalCategories.value;
 
     render(isFavorite);
     modal.close();
