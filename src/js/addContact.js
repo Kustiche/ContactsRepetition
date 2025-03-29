@@ -4,7 +4,7 @@ import { inputName, inputTelephone } from "./view.js";
 import { sortedContacts } from "./sortedContacts.js";
 
 export function addContact(isFavorite) {
-  const isNumberTelephone = isNaN(inputTelephone.value);
+  const isNumberTelephone = isNaN(inputTelephone.value) || inputTelephone.value.trim() === "";
 
   if (isNumberTelephone) {
     inputTelephone.classList.add("error");
@@ -15,7 +15,7 @@ export function addContact(isFavorite) {
 
     contacts.push({
       name: inputName.value.trim() === "" ? inputTelephone.value.substring(0, 26) : inputName.value.trim(),
-      telephone: inputTelephone.value.substring(0, 26),
+      telephone: inputTelephone.value.substring(0, 26).trim(),
       category: "Не выбрана",
       isFavorite: false,
     });

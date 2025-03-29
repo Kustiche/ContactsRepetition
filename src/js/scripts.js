@@ -1,10 +1,11 @@
 import { addContact } from "./addContact.js";
 import { addFavorite } from "./addFavorite.js";
+import { closeModal } from "./closeModal.js";
 import { deleteContact } from "./deleteContact.js";
 import { edititngContact } from "./edititngContact.js";
 import { openModal } from "./openModal.js";
 import { render } from "./render.js";
-import { buttonFavorites, content, form, modalDeleteButton, modalForm } from "./view.js";
+import { buttonFavorites, content, form, modal, modalDeleteButton, modalForm } from "./view.js";
 
 export const contacts = JSON.parse(localStorage.getItem("contacts")) ?? [];
 let contactIndex = "";
@@ -45,6 +46,14 @@ buttonFavorites.addEventListener("click", () => {
   isFavorite = isFavorite ? false : true;
 
   render(isFavorite);
+});
+
+modal.addEventListener("click", (e) => {
+  const isClickBackgroundModal = e.target.closest(".modal__wrap");
+
+  if (!isClickBackgroundModal) {
+    closeModal();
+  }
 });
 
 render();

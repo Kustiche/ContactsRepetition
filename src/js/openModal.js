@@ -8,5 +8,7 @@ export function openModal(e) {
   modalInputTel.value = contacts[contactIndex].telephone;
   modalCategories.value = contacts[contactIndex].category;
 
+  modalInputTel.classList.remove("error");
+
   modal.showModal();
 }
