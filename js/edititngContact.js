@@ -3,9 +3,9 @@ import { contacts } from "./scripts.js";
 import { modal, modalCategories, modalInputName, modalInputTel } from "./view.js";
 
 export function edititngContact(contactIndex, isFavorite) {
-  const isNumberTelephone = isNaN(modalInputTel.value) || modalInputTel.value.trim() === "";
+  const isIncorrectnesTelephone = isNaN(modalInputTel.value) || modalInputTel.value.trim() === "";
 
-  if (isNumberTelephone) {
+  if (isIncorrectnesTelephone) {
     modalInputTel.classList.add("error");
 
     return;

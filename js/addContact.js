@@ -4,9 +4,9 @@ import { inputName, inputTelephone } from "./view.js";
 import { sortedContacts } from "./sortedContacts.js";
 
 export function addContact(isFavorite) {
-  const isNumberTelephone = isNaN(inputTelephone.value) || inputTelephone.value.trim() === "";
+  const isIncorrectnesTelephone = isNaN(inputTelephone.value) || inputTelephone.value.trim() === "";
 
-  if (isNumberTelephone) {
+  if (isIncorrectnesTelephone) {
     inputTelephone.classList.add("error");
 
     return;

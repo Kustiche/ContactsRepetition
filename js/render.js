@@ -15,17 +15,22 @@ export function render(favorite = false) {
   }
 
   filteredContacts.forEach((element, index) => {
-    const contact = templateContact.content.cloneNode(true);
+    const contactTemplate = templateContact.content.cloneNode(true);
+    const contact = contactTemplate.querySelector(".contacts__contact");
+    const contactAvatar = contactTemplate.querySelector(".contacts__avatar");
+    const contactName = contactTemplate.querySelector(".contacts__name");
+    const contactTelephone = contactTemplate.querySelector(".contacts__tel");
+    const contactButtonStar = contactTemplate.querySelector(".contacts__button-star");
 
-    contact.querySelector(".contacts__contact").dataset.index = index;
-    contact.querySelector(".contacts__avatar").textContent = element.name.substring(0, 1).toUpperCase();
-    contact.querySelector(".contacts__name").textContent = element.name;
-    contact.querySelector(".contacts__tel").textContent = "+" + element.telephone;
+    contact.dataset.index = index;
+    contactAvatar.textContent = element.name.substring(0, 1).toUpperCase();
+    contactName.textContent = element.name;
+    contactTelephone.textContent = "+" + element.telephone;
 
     if (element.isFavorite) {
-      contact.querySelector(".contacts__button-star").classList.add("active");
+      contactButtonStar.classList.add("active");
     }
 
-    content.append(contact);
+    content.append(contactTemplate);
   });
 }
