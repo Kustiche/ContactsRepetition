@@ -4,18 +4,20 @@ import { contacts } from "./scripts.js";
 import { modal, modalCategories, modalInputName, modalInputTel } from "./view.js";
 
 export function edititngContact(contactIndex, isFavoriteRegime) {
-  const isIncorrectnesTelephone = isNaN(modalInputTel.value) || modalInputTel.value.trim() === "";
+  const isIncorrectnesTelephone = isNaN(modalInputTel.value.replace(/\s+/g, "")) || modalInputTel.value.trim() === "";
 
   if (isIncorrectnesTelephone) {
     modalInputTel.classList.add("error");
+
+    activationNotification("Ошибка ввода номера телефона.");
 
     return;
   } else {
     modalInputTel.classList.remove("error");
 
     contacts[contactIndex].name =
-      modalInputName.value.trim() === "" ? modalInputTel.value.substring(0, 26) : modalInputName.value.trim();
-    contacts[contactIndex].telephone = modalInputTel.value.substring(0, 26).trim();
+      modalInputName.value.trim() === "" ? modalInputTel.value.replace(/\s+/g, "") : modalInputName.value;
+    contacts[contactIndex].telephone = modalInputTel.value.replace(/\s+/g, "");
     contacts[contactIndex].category = modalCategories.value;
 
     render(isFavoriteRegime);

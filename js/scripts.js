@@ -6,7 +6,17 @@ import { deleteContact } from "./deleteContact.js";
 import { edititngContact } from "./edititngContact.js";
 import { openModal } from "./openModal.js";
 import { render } from "./render.js";
-import { buttonFavorites, content, form, modal, modalDeleteButton, modalForm } from "./view.js";
+import { restrictionInput } from "./restrictionInput.js";
+import {
+  buttonFavorites,
+  content,
+  form,
+  inputTelephone,
+  modal,
+  modalDeleteButton,
+  modalForm,
+  modalInputTel,
+} from "./view.js";
 
 export const contacts = JSON.parse(localStorage.getItem("contacts")) ?? [];
 let contactIndex = "";
@@ -61,6 +71,14 @@ modal.addEventListener("click", (e) => {
   if (!isClickBackgroundModal) {
     closeModal();
   }
+});
+
+inputTelephone.addEventListener("input", (e) => {
+  restrictionInput(e);
+});
+
+modalInputTel.addEventListener("input", (e) => {
+  restrictionInput(e);
 });
 
 render();

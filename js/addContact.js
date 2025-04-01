@@ -5,7 +5,7 @@ import { sortedContacts } from "./sortedContacts.js";
 import { activationNotification } from "./activationNotification.js";
 
 export function addContact(isFavoriteRegime) {
-  const isIncorrectnesTelephone = isNaN(inputTelephone.value) || inputTelephone.value.trim() === "";
+  const isIncorrectnesTelephone = isNaN(inputTelephone.value.replace(/\s+/g, "")) || inputTelephone.value.trim() === "";
 
   if (isIncorrectnesTelephone) {
     inputTelephone.classList.add("error");
@@ -17,8 +17,8 @@ export function addContact(isFavoriteRegime) {
     inputTelephone.classList.remove("error");
 
     contacts.push({
-      name: inputName.value.trim() === "" ? inputTelephone.value.substring(0, 26) : inputName.value.trim(),
-      telephone: inputTelephone.value.substring(0, 26).trim(),
+      name: inputName.value.trim() === "" ? inputTelephone.value.replace(/\s+/g, "") : inputName.value,
+      telephone: inputTelephone.value.replace(/\s+/g, ""),
       category: "Не выбрана",
       isFavorite: false,
     });
