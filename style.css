@@ -7,6 +7,7 @@
   --barberry-color: #e7e61a;
   --bird-flower-color: #d3d21a;
   --red-color: #ff0000;
+  --gray-color: #737373;
 }
 
 @font-face {
@@ -41,7 +42,7 @@ body {
   font-family: Mandali, sans-serif;
   font-weight: 400;
   color: var(--light-color);
-  background-color: var(--light-color);
+  background-color: var(--gray-color);
 }
 
 .site-container {
@@ -131,6 +132,7 @@ img {
 }
 
 .contacts {
+  position: relative;
   display: flex;
   align-items: center;
   min-height: 100vh;
@@ -302,4 +304,27 @@ img {
 }
 .modal__button {
   margin-bottom: 10px;
+}
+
+.notification {
+  position: absolute;
+  padding: 40px;
+  background-color: var(--dark-color);
+  top: 0;
+  left: 50%;
+  border-left: 2px solid var(--yellow-color);
+  border-right: 2px solid var(--yellow-color);
+  border-bottom: 2px solid var(--yellow-color);
+  border-radius: 0 0 15px 15px;
+  transform: translateX(-50%) translateY(-100%);
+  transition: transform 0.8s;
+}
+.notification.active {
+  transform: translateX(-50%);
+}
+.notification__text {
+  margin: 0;
+  font-size: 20px;
+  font-family: Mandali, sans-serif;
+  color: var(--light-color);
 }/*# sourceMappingURL=style.css.map */
