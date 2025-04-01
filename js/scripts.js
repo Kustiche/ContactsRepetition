@@ -9,12 +9,12 @@ import { buttonFavorites, content, form, modal, modalDeleteButton, modalForm } f
 
 export const contacts = JSON.parse(localStorage.getItem("contacts")) ?? [];
 let contactIndex = "";
-let isFavorite = false;
+let isFavoriteRegime = false;
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  addContact(isFavorite);
+  addContact(isFavoriteRegime);
 });
 
 content.addEventListener("click", (e) => {
@@ -22,7 +22,7 @@ content.addEventListener("click", (e) => {
   const isContact = e.target.closest(".contacts__contact") !== null;
 
   if (isButtonStar) {
-    addFavorite(e, isFavorite);
+    addFavorite(e, isFavoriteRegime);
 
     return;
   } else if (isContact) {
@@ -35,17 +35,17 @@ content.addEventListener("click", (e) => {
 modalForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  edititngContact(contactIndex, isFavorite);
+  edititngContact(contactIndex, isFavoriteRegime);
 });
 
 modalDeleteButton.addEventListener("click", () => {
-  deleteContact(contactIndex, isFavorite);
+  deleteContact(contactIndex, isFavoriteRegime);
 });
 
 buttonFavorites.addEventListener("click", () => {
-  isFavorite = isFavorite ? false : true;
+  isFavoriteRegime = isFavoriteRegime ? false : true;
 
-  render(isFavorite);
+  render(isFavoriteRegime);
 });
 
 modal.addEventListener("click", (e) => {

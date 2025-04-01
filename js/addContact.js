@@ -3,7 +3,7 @@ import { contacts } from "./scripts.js";
 import { inputName, inputTelephone } from "./view.js";
 import { sortedContacts } from "./sortedContacts.js";
 
-export function addContact(isFavorite) {
+export function addContact(isFavoriteRegime) {
   const isIncorrectnesTelephone = isNaN(inputTelephone.value) || inputTelephone.value.trim() === "";
 
   if (isIncorrectnesTelephone) {
@@ -24,7 +24,7 @@ export function addContact(isFavorite) {
     inputTelephone.value = "";
 
     sortedContacts();
-    render(isFavorite);
+    render(isFavoriteRegime);
 
     localStorage.setItem("contacts", JSON.stringify(contacts));
   }

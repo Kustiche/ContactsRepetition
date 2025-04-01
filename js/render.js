@@ -1,7 +1,7 @@
 import { contacts } from "./scripts.js";
 import { content, templateContact } from "./view.js";
 
-export function render(isFavorite = false) {
+export function render(isFavoriteRegime = false) {
   content.innerHTML = "";
 
   contacts.forEach((element, index) => {
@@ -21,9 +21,9 @@ export function render(isFavorite = false) {
       contactButtonStar.classList.add("active");
     }
 
-    if (!isFavorite) {
+    if (!isFavoriteRegime) {
       content.append(contactTemplate);
-    } else if (isFavorite && element.isFavorite) {
+    } else if (isFavoriteRegime && element.isFavorite) {
       content.append(contactTemplate);
     }
   });

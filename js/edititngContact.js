@@ -2,7 +2,7 @@ import { render } from "./render.js";
 import { contacts } from "./scripts.js";
 import { modal, modalCategories, modalInputName, modalInputTel } from "./view.js";
 
-export function edititngContact(contactIndex, isFavorite) {
+export function edititngContact(contactIndex, isFavoriteRegime) {
   const isIncorrectnesTelephone = isNaN(modalInputTel.value) || modalInputTel.value.trim() === "";
 
   if (isIncorrectnesTelephone) {
@@ -17,7 +17,7 @@ export function edititngContact(contactIndex, isFavorite) {
     contacts[contactIndex].telephone = modalInputTel.value.substring(0, 26).trim();
     contacts[contactIndex].category = modalCategories.value;
 
-    render(isFavorite);
+    render(isFavoriteRegime);
     modal.close();
 
     localStorage.setItem("contacts", JSON.stringify(contacts));
