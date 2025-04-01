@@ -3,6 +3,8 @@ export const content = document.querySelector(".contacts__content");
 export const inputName = document.querySelector(".contacts__input-name");
 export const inputTelephone = document.querySelector(".contacts__input-tel");
 export const buttonFavorites = document.querySelector(".contacts__button-favorites");
+export const notification = document.querySelector(".notification");
+export const notificationText = document.querySelector(".notification__text");
 export const templateContact = document.querySelector("#contact");
 
 export const modal = document.querySelector("#contactModal");

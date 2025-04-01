@@ -1,3 +1,4 @@
+import { activationNotification } from "./activationNotification.js";
 import { render } from "./render.js";
 import { contacts } from "./scripts.js";
 import { modal, modalCategories, modalInputName, modalInputTel } from "./view.js";
@@ -18,6 +19,7 @@ export function edititngContact(contactIndex, isFavoriteRegime) {
     contacts[contactIndex].category = modalCategories.value;
 
     render(isFavoriteRegime);
+    activationNotification("Контакт успешно изменён.");
     modal.close();
 
     localStorage.setItem("contacts", JSON.stringify(contacts));

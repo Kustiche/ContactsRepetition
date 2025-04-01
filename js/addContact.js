@@ -2,12 +2,15 @@ import { render } from "./render.js";
 import { contacts } from "./scripts.js";
 import { inputName, inputTelephone } from "./view.js";
 import { sortedContacts } from "./sortedContacts.js";
+import { activationNotification } from "./activationNotification.js";
 
 export function addContact(isFavoriteRegime) {
   const isIncorrectnesTelephone = isNaN(inputTelephone.value) || inputTelephone.value.trim() === "";
 
   if (isIncorrectnesTelephone) {
     inputTelephone.classList.add("error");
+
+    activationNotification("Ошибка ввода номера телефона.");
 
     return;
   } else {
@@ -25,6 +28,7 @@ export function addContact(isFavoriteRegime) {
 
     sortedContacts();
     render(isFavoriteRegime);
+    activationNotification("Контакт успешно добавлен.");
 
     localStorage.setItem("contacts", JSON.stringify(contacts));
   }
