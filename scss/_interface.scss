@@ -18,6 +18,10 @@
   &.error {
     border: 1px solid var(--red-color);
   }
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .button {

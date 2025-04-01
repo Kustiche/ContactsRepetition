@@ -1,20 +1,10 @@
 import { contacts } from "./scripts.js";
 import { content, templateContact } from "./view.js";
 
-export function render(favorite = false) {
+export function render(isFavorite = false) {
   content.innerHTML = "";
 
-  let filteredContacts = contacts.slice(0);
-
-  if (favorite) {
-    filteredContacts = filteredContacts.filter((contact) => {
-      return contact.isFavorite;
-    });
-  } else {
-    filteredContacts = contacts.slice(0);
-  }
-
-  filteredContacts.forEach((element, index) => {
+  contacts.forEach((element, index) => {
     const contactTemplate = templateContact.content.cloneNode(true);
     const contact = contactTemplate.querySelector(".contacts__contact");
     const contactAvatar = contactTemplate.querySelector(".contacts__avatar");
@@ -31,6 +21,10 @@ export function render(favorite = false) {
       contactButtonStar.classList.add("active");
     }
 
-    content.append(contactTemplate);
+    if (!isFavorite) {
+      content.append(contactTemplate);
+    } else if (isFavorite && element.isFavorite) {
+      content.append(contactTemplate);
+    }
   });
 }

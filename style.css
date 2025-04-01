@@ -110,6 +110,9 @@ img {
 .input.error {
   border: 1px solid var(--red-color);
 }
+.input:focus {
+  outline: none;
+}
 
 .button {
   padding: 8px 0;
