@@ -27,4 +27,10 @@ export function render(isFavoriteRegime = false) {
       content.append(contactTemplate);
     }
   });
+
+  if (isFavoriteRegime && content.innerHTML === "") {
+    content.innerHTML = "Контактов в избранном нет";
+  } else if (!isFavoriteRegime && content.innerHTML === "") {
+    content.innerHTML = "Контактов нет";
+  }
 }

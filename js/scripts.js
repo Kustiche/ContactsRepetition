@@ -1,3 +1,4 @@
+import { activationNotification } from "./activationNotification.js";
 import { addContact } from "./addContact.js";
 import { addFavorite } from "./addFavorite.js";
 import { closeModal } from "./closeModal.js";
@@ -44,6 +45,12 @@ modalDeleteButton.addEventListener("click", () => {
 
 buttonFavorites.addEventListener("click", () => {
   isFavoriteRegime = isFavoriteRegime ? false : true;
+
+  if (isFavoriteRegime) {
+    activationNotification("Показ избранных контактов");
+  } else {
+    activationNotification("Показ всех контактов");
+  }
 
   render(isFavoriteRegime);
 });
